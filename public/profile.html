@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="./scripts/jquery-3.4.1.min.js"></script>
+		<script src="scripts/myFunctions.js"></script>
+		<link rel="stylesheet" type="text/css" href="./Bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="style.css"/>
+		<link rel="stylesheet" type="text/css" href="chatstyle.css"/>
+		<link rel="stylesheet" type="text/css" href="./Font Awesome/css/font-awesome.min.css">
+		<title>My Chat App</title>
+	</head>
+	<body>
+		<div class = "container topnav">
+			<div class = "row">
+				<div class="col-md-1 col-md-offset-5">
+					<h1 class = "header">PARLEY </h1>
+				</div>
+				<div class="col-md-3 col-md-offset-10">
+					<ul class="nav nav-pills">
+						<li><a href="#" target="_blank">Home</a></li>
+						<li><a href="./index.html">Logout</a></li>
+					</ul>
+				</div>
+	
+			</div>
+		</div>
+		<hr>
+		<div class="profile" >
+			<img id = "profile-pic" class="profile-pic" src="./Pictures/IMG_0161.JPG"><label id ="profile-name" class="profile-name" style="color: lightblue;"></label>
+			<p id = "start-chat" class="profile-name profile-button">Close Chats</p>
+			<p id = "add-friend" class="profile-name profile-button">Add Friend</p>
+			<p id = "delete-friend" class="profile-name profile-button">Delete Friend</p>
+			<p id = "friend-request" class="profile-name profile-button">Friend Requests</p>
+			<p id = "log-out" class="profile-name profile-button">Log Out</p>
+		</div>
+		<div id = "chat-box" class="chat-box" style="display:block;">
+			<div class="chat-header" id="chat-header">
+				<!-- <div class="user-profile active" data-up='cont1'></div>
+				<span>Erza</span>
+				<div class="user-profile" data-up='cont2'></div>
+				<span>Nastu</span> -->
+			</div>
+			<div id='chat' class="chat">
+		
+				<!-- <div class="chat-container active" id='cont1'>
+		
+					<div class="bubble">
+						<p>Hello Motherfucker.. how are you doing fool??</p>
+						
+						<span class="datestamp">May 20, 2016, 4:16 PM</span>
+					</div>
+					
+					<div class="day">Today</div>
+		
+					<div class="bubble bubble-alt">
+						<p>I'm better than I've ever been. You look like shit my nigga.. wafigwan?</p>
+						<span class="fa fa-check"></span>
+						<span class="fa fa-registered"></span>
+						<span class="datestamp  dt-alt">May 20, 2016, 4:17 PM</span>
+					</div>
+					
+		
+		
+					<div class="bubble">
+						<p>I've been saving the world mehn.. You probably can't relate</p>
+						<span class="datestamp">May 20, 2016, 4:20 PM</span>
+					</div>
+		
+					<div class="bubble">
+						<p>Cos you still live with your mom.. LMAO</p>
+						<span class="datestamp">May 20, 2016, 4:20 PM</span>
+					</div>
+					
+		
+					<div class="bubble bubble-alt">
+						<p>At least I live in a house.. Unlike you homeless hobo LMAO</p>
+						<span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
+					</div>
+					
+				</div>
+				<div class="chat-container" id='cont2'>
+		
+					<div class="bubble">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut sapien vitae eros consectetur vehicula lacinia at nibh. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum aliquet elit nec erat rutrum rutrum. Mauris ligula
+							magna, dignissim id tortor eu, aliquet dapibus ipsum</p>
+						<span class="datestamp">May 20, 2016, 4:16 PM</span>
+					</div>
+					
+		
+		
+					<div class="bubble bubble-alt">
+						<p>Hi</p>
+						<span class="datestamp  dt-alt">May 20, 2016, 4:17 PM</span>
+					</div>
+					
+		
+		
+					<div class="bubble">
+						<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut facilisis justo in nisl elementum, at fermentum augue tempor. </p>
+					</div>
+		
+					<div class="bubble">
+						<p>Aliquam feugiat tortor ac massa commodo convallis sit amet ultricies urna. Sed pharetra augue ac sapien varius, at vulputate velit pretium.</p>
+						<span class="datestamp">May 20, 2016, 4:20 PM</span>
+					</div>
+					
+		
+					<div class="bubble bubble-alt">
+						<p>Quisque sit amet nulla nibh. Mauris eu lacus sed orci rhoncus cursus nec et enim. Phasellus finibus luctus mi ac sodales. Integer efficitur gravida mauris in eleifend. Maecenas ac interdum mi.</p>
+						<span class="datestamp  dt-alt">May 20, 2016, 4:22 PM</span>
+					</div>
+					
+				</div> -->
+			</div>
+			<div class="chat-control">
+				<div class="row">
+					<input class="col-md-9 chat-input" id="text-message" type="text" placeholder="enter your message"/>
+					<span class = "col-md-3 send-chat">
+						<div class="form-group">
+							<button id = "send-message" class="button btn btn-default btn-primary btn-md send-button" style="width: 100%;">SEND</button>
+						</div>
+					</span>
+				</div>
+				
+			</div>
+		</div>
+		<div id = "search-box" class="search-box" style="display: none;">
+			<input class="search" type="text" id="search">
+			<span class="search-button" id="search-button">Search</span>
+			<div class="friends-group">
+				<ul class="list-group friends-list" id="add-friends-list">
+					<!-- <li class="list-group-item item">Name<span class="fa fa-pull-right fa-check"></span></li> -->
+				</ul>				
+			</div>
+		</div>
+		<div id = "friend-request-box" class="search-box" style="display: none;">
+			<div class="friends-group">
+				<ul class="list-group friends-list" id="friend-request-list">
+					<li class="list-group-item item">Name
+						<span class="fa fa-pull-right fa-user-plus"></span>
+						<span class="fa fa-pull-right fa-user-times"></span>
+					</li>
+				</ul>				
+			</div>
+		</div>
+		<div id = "delete-friend-box" class="search-box" style="display: none;">
+			<div class="friends-group">
+				<ul class="list-group friends-list" id="friends-list">
+					<li class="list-group-item item">
+						Name
+						<span class="fa fa-pull-right fa-times"></span>
+					</li>
+				</ul>				
+			</div>
+		</div>
+		
+		<script src="scripts/profile.js"></script>
+		<script src="scripts/chat.js"></script>
+	</body>
+</html>
