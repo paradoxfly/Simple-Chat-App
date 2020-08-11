@@ -314,9 +314,9 @@ sendMessage.addEventListener("click", event =>{
 			},
 			body: JSON.stringify(data)
 		}	
-		// fetch('/chats', options)
-		// 	.then(response => response.json())
-		// 	.then(data => console.log(data))
+		fetch('/chats', options)
+			.then(response => response.json())
+			.then(data => console.log(data))
 	}
 })
 //"Timothy":[{message:"", timeStamp:"", type:"incoming/outgoing", status: "delivered/read/none"}]
